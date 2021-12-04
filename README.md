@@ -5,6 +5,7 @@ A simplistic python command line script to log attendance. See below for feature
 ## To use
 
 - Clone the repo. `git clone https://github.com/anivanchen/attendance-scanner`
+- Create a folder named `attendance` in the `root` directory.
 - Run the script. A CSV file should automatically be generated for the day. 
 
 ## Features
