@@ -32,9 +32,8 @@ def checkInUser():
     if id not in members: # validates no duplicates
 
       members[id] = dt.datetime.now().strftime("%H:%M:%S")
-
-      with open(f"attendance/{dt.date.today().isoformat()}.csv", "a") as file:
-        file.write(f"{id},{dt.datetime.now().strftime(timeFormat)}\n")
+      
+      file.write(f"{id},{dt.datetime.now().strftime(timeFormat)}\n")
 
       print("Successfully Scanned")
 
@@ -47,5 +46,6 @@ if __name__ == "__main__":
   checkIfNewDay()
   getAlreadySignedIn()
 
-  while True: 
-    checkInUser()
+  with open(f"attendance/{dt.date.today().isoformat()}.csv", "a") as file:
+    while True: 
+        checkInUser()
